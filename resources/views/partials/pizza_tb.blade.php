@@ -53,30 +53,30 @@
 
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-6">
-    @foreach ($group as $item)
-        <!-- Pizza karta -->
-        <div class="flex flex-col h-[450px] border border-gray-300 rounded-lg p-4 shadow-md gap-4">
-            <!-- Obrazok pizze -->
-            <div class="w-full overflow-hidden">
-                <img src="/storage/images/{{ $item->image }}" alt="Pizza image" class="object-cover w-full h-[220px]">
-            </div>
+                    @foreach ($group as $item)
+                <!-- Pizza karta -->
+                    <div class="flex flex-col h-[450px] border border-gray-300 rounded-lg p-4 shadow-md gap-4">
+                    <!-- Obrazok pizze -->
+                        <div class="w-full overflow-hidden">
+                            <img src="/storage/images/{{ $item->image }}" alt="Pizza image" class="object-cover w-full h-[220px]">
+                        </div>
 
-            <!-- Informácie o pizzi -->
-            <div class="flex flex-col items-center justify-center text-center gap-4">
-                <h1 class="text-xl font-semibold">{{ $item->name }}</h1>
-                <p class="text-gray-400 line-clamp-3">{{ $item->description }}</p>
-            </div>
+                        <!-- Informácie o pizzi -->
+                        <div class="flex flex-col items-center justify-center text-center gap-4">
+                            <h1 class="text-xl font-semibold">{{ $item->name }}</h1>
+                            <p class="text-gray-400 line-clamp-3">{{ $item->description }}</p>
+                        </div>
 
-            <!-- Cena a detaily -->
-            <div class="flex flex-row justify-between items-center mt-auto">
-                <p class="text-lg font-bold text-green-500">{{ $item->price }} kč</p>
-                <p class="text font-semibold">{{ $item->size ? $item->size . ' cm' : '' }}</p>
-                <a class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" href="{{ url('pizza_info/' . $item->id) }}">Detaily</a>
-            </div>
+                        <!-- Cena a detaily -->
+                        <div class="flex flex-row justify-between items-center mt-auto">
+                            <p class="text-lg font-bold text-green-500">{{ $item->price }} kč</p>
+                            <p class="text font-semibold">{{ $item->size ? $item->size . ' cm' : '' }}</p>
+                        <a class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" href="{{ url('pizza_info/' . $item->id) }}">Detaily</a>
+                        </div>
 
-        </div>
-    @endforeach
-</div>
+                    </div>
+                    @endforeach
+                </div>
 
             </div>
         @endforeach
